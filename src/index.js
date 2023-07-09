@@ -4,9 +4,14 @@ import Notiflix from 'notiflix';
 import { fetchBreeds } from './cat-api';
 import { fetchCatByBreed } from './cat-api';
 
-const select = document.querySelector('.breed-select');
+const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
+const catInfoContainer = document.querySelector('.cat-info');
 
-axios.defaults.headers.common['x-api-key'] =
-  'live_HlIOy0zcfezhfHUXznjThXXmpIUKAJ90Tj3QthYf4iphxUH2lPkRN3O4iSlFd4My';
+// Dodanie nasłuchiwania na zdarzenie zmiany dla select
+breedSelect.addEventListener('change', handleSelectChange);
+
+function handleSelectChange(event) {
+  const breedId = event.target.value;
+}
