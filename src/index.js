@@ -12,6 +12,8 @@ const apiKey =
   'live_7RIdaPQIKQeuQ4h5OHhIknuCKcTJHhxKZ6jGEa1GCIsFM4TeRDRzpC67rBRSSXOw';
 
 breedSelect.addEventListener('change', handleChange);
+breedSelect.classList.add('hidden');
+error.classList.add('hidden');
 
 function addList(items) {
   const markup = items
@@ -25,7 +27,7 @@ function addList(items) {
 //creating post on website with cat name, image and descripion
 function addPost(item) {
   const markup = `
-  <img src="${item.url}" alt="">
+  <img class="postImage" src="${item.url}" alt="">
   <div>
     <h1>${item.breeds[0].name}</h1>
     <p>${item.breeds[0].description}</p>
